@@ -7,7 +7,6 @@ use App\Models\Topico;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-
 class MensagemController extends Controller
 {
     /**
@@ -17,7 +16,7 @@ class MensagemController extends Controller
      */
     public function index()
     {
-        $mensagem = Mensagem::all();
+        $mensagens = Mensagem::all();
         return view("restrict/mensagem", compact('mensagens'));
     }
 
@@ -45,9 +44,10 @@ class MensagemController extends Controller
             'mensagem' => 'required|max:255',
             'topico' => 'array|exists:App\Models\Topico,id'
         ]);
-        if($validated){
+        if ($validated) {
+            //print_r($request->get('topico));
             $mensagem = new Mensagem();
-            $mensagem->user_id = Auth::user()->id;
+            $mensagem-> user_id = Auth::user()->id;
             $mensagem->titulo = $request->get('titulo');
             $mensagem->mensagem = $request->get('mensagem');
             $mensagem->save();
@@ -93,7 +93,7 @@ class MensagemController extends Controller
             'mensagem' => 'required|max:255',
             'topico' => 'array|exists:App\Models\Topico,id'
         ]);
-        if($validated){
+        if ($validated) {
             $mensagem->titulo = $request->get('titulo');
             $mensagem->mensagem = $request->get('mensagem');
             $mensagem->save();
@@ -111,6 +111,6 @@ class MensagemController extends Controller
     public function destroy(Mensagem $mensagem)
     {
         $mensagem->delete();
-        return redirect('mensagem');
+        return redirect("mensagem");
     }
 }
