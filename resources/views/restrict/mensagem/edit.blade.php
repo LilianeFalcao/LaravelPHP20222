@@ -38,7 +38,8 @@
     <div>
         <label for="img">Imagem</label>
         <input type="file" name="imagem" id="img" accept="imagem/*" required />
-        <img src="{{Storage::url($mensagem->imagem)}}" alt="{{$mensagem->titulo}}" class="showImg" />
+       <!-- <img src="{{Storage::url($mensagem->imagem)}}" alt="{{$mensagem->titulo}}" class="showImg" /> -->
+       <img src="{{ $mensagem-> imagem}}" alt="{{ $mensagem->titulo }}" class="showImg"/>
     </div>
     <button type="submit" class="button"> Salvar </button>
 </form>
