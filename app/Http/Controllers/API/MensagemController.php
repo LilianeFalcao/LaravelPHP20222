@@ -1,12 +1,17 @@
 <?php
 
 namespace App\Http\Controllers\API;
-
+use App\Models\Mensagem;
+use App\Traits\ApiResponse;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class MensagemController extends Controller
 {
+    use ApiResponse;
+
     /**
      * Display a listing of the resource.
      *

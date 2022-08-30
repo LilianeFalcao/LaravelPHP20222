@@ -48,7 +48,6 @@ class MensagemController extends Controller
             'imagem' => 'image'
         ]);
         if ($validated) {
-            //print_r($request->get('topico));
             $mensagem = new Mensagem();
             $mensagem-> user_id = Auth::user()->id;
             $mensagem->titulo = $request->get('titulo');
