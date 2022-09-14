@@ -26,24 +26,26 @@ class GoogleServiceProvider extends ServiceProvider
     public function boot()
     {
         try{
-            Storage::extends('google', function ($app, $config){
+            Storage::extend('google', function ($app, $config){
                 $options= [];
                 if (!empty($config ['teamDriveId'] ?? null )){
                     $options['teamDriveId'] = $config['teamDriveId'];
                 }
+                $client = new \Google\Client();
+
                 $client->setClientId($config['clientId']);
-                $client->setClientaSecret($config['clientSecret']);
+                $client->setClientSecret($config['clientSecret']);
                 $client->refreshToken($config['refreshToken']);
-                $client->setAccessToken($config['AccessToken']);
+                $client->setAccessToken($config['accessToken']);
 
                 $service = new \Google\Service\Drive($client);
-                $adapter = new \Masbug\Flysystem\GoogleDriveAdapter($service, $config['folder'] ?? '/', $options);
-                $service = new \League\Flysystem\Flysystem($adapter);
+                $adapter = new \Masbug\Flysystem\GoogleDriveAdapter($service, $config['folder'] ?? '/', $options); 
+                $driver = new \League\Flysystem\Filesystem($adapter);
 
-                return new Illuminate\Flysystem\FlysystemAdapter($driver, $adapter);
+                return new \Illuminate\Filesystem\FilesystemAdapter($driver, $adapter);
             });
         }catch(\Exception $e){
-            dd($e);
+            // dd($e);
         } 
     }
 }
