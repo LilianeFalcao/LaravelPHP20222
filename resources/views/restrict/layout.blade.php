@@ -23,6 +23,9 @@
                 <li>
                     <a href="{{ url('/dashboard')}}"> Usuários </a>
                 </li>
+                <li>
+                    <a href="{{ url('/avisos')}}"> Avisos </a>
+                </li>
             </ul>
         </nav>
 
