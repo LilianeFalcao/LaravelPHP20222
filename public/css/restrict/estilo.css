@@ -7,12 +7,12 @@
 :root {
     --black: #000000;
     --white: #ffffff;
-    --primary: #455a64;
-    --primaryLight: #cfd8dc;
-    --secondary: #7e57c2;
-    --secondaryLight: #e8e2f4;
-    --third: #ffb74d;
-    --thirdLight: #ffe9ca;
+    --primary: #36393f;
+    --primaryLight: #CFD8DC;
+    --secondary: #1d1f22;
+    --secondaryLight: #FFE9CA;
+    --third: #383646;
+    --thirdLight: #B5B2BF;
 }
 header {
     display: flex;

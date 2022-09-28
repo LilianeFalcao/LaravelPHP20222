@@ -1,4 +1,6 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors');
+
 
 module.exports = {
     content: [
@@ -19,15 +21,12 @@ module.exports = {
             white: '#ffffff',
             primary: '#36393f',
             primaryLight: '#CFD8DC',
-            purple: '#1d1f22',
-            orange: '#FFB74D',
-            orangeLight: '#FFE9CA',
-            fundo: "#383646",
-            perfil:"#B5B2BF",
-            pop: "#3C3945",
-            postbotao: "#3C3945",
-            Card: "#777382",
-            qrCode: "#383646"
+            secondary: '#1d1f22',
+            secondaryLight: '#FFE9CA',
+            third: "#383646",
+            thirdLight:"#B5B2BF",
+            red: colors.red,
+            blue: colors.blue ,
         },
     },
 

@@ -39,7 +39,7 @@ class Push extends Component
         $aviso->body = $this->body;
         $aviso->save();
 
-        $this->limpart();
+        $this->limpar();
     }
 
     public function edit(Aviso $aviso){
