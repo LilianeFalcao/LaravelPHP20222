@@ -1346,11 +1346,11 @@ select {
 }
 .bg-primary {
   --tw-bg-opacity: 1;
-  background-color: rgb(69 90 100 / var(--tw-bg-opacity));
+  background-color: rgb(54 57 63 / var(--tw-bg-opacity));
 }
 .bg-secondary {
   --tw-bg-opacity: 1;
-  background-color: rgb(126 87 194 / var(--tw-bg-opacity));
+  background-color: rgb(29 31 34 / var(--tw-bg-opacity));
 }
 .bg-blue-500 {
   --tw-bg-opacity: 1;
@@ -1544,6 +1544,10 @@ select {
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+.text-\[\#ffffff\] {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;
